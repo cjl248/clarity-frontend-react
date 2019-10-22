@@ -49,7 +49,7 @@ class App extends React.Component {
           this.setState({
             loggedIn: true,
             currentUser: user,
-            activePage: 'Videos'
+            activePage: 'Inspirations'
           })
         }
       })
@@ -125,7 +125,7 @@ class App extends React.Component {
           this.setState({
             loggedIn: true,
             currentUser: data,
-            activePage: 'Videos'
+            activePage: 'Inspirations'
           })
         // }
       })

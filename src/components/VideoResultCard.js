@@ -53,10 +53,11 @@ export default function VideoResultCard(props) {
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        border: 'solid #3f51b5 1px',
+        border: 'solid #3f51b5 2px',
         borderRadius: '5px',
         height: '100%',
-        padding: '1vh 0'
+        padding: '1vh',
+        margin: '1vh 0'
       }}
     >
       <div className={classes.details} style={{ flexGrow: '5' }}>
@@ -64,7 +65,7 @@ export default function VideoResultCard(props) {
           <Typography component="h4" variant="h4">
             {formatTitle()}
           </Typography>
-          <Typography component="h5" variant="h5" color="textSecondary">
+          <Typography component="h5" variant="h5" color="textSecondary" style={{paddingTop: '1rem'}}>
             {`Posted on: ${date}`}
           </Typography>
         </CardContent>
@@ -78,7 +79,7 @@ export default function VideoResultCard(props) {
         <CardMedia
           className={classes.cover}
           image={thumbnail}
-          title="Live from space album cover"
+          title={formatTitle()}
           style={{
             flexGrow: '3',
             minWidth: '520px',

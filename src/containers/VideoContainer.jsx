@@ -35,7 +35,8 @@ export default class VideoContainer extends React.Component {
       'Stephen Procter': 'UCQOhjwGL3mMIQgmlH8Iq7yw',
       'Michael Sealey': 'UC9GoqHypa-SDrGPMyeBkjKw'
     },
-    videoResults: []
+    videoResults: [],
+    hasSearched: false
   }
 
   setActiveVideo = (id) => {
@@ -47,7 +48,8 @@ export default class VideoContainer extends React.Component {
   handleSearch = (keywords, channelId) => {
     this.setState({
       keywords,
-      channelId
+      channelId,
+      hasSearched: true
     })
     const url = endpoint+`key=${key}`+"&"+query.part+"&"+query.maxResults+"&"+query.type+`&channelId=${channelId}&q=${keywords}`
 
@@ -69,6 +71,10 @@ export default class VideoContainer extends React.Component {
     })
   }
 
+  renderVideoPlayer = () => {
+    if (this.state.ActiveVideoId) return (<VideoPlayer ActiveVideoId={this.state.ActiveVideoId}/>)
+  }
+
   render() {
     return (
       <Container
@@ -83,7 +89,10 @@ export default class VideoContainer extends React.Component {
           padding: '3vh',
         }}
       >
-        <VideoSearchBar handleSearch={this.handleSearch} channelList={this.state.channelList} />
+        <VideoSearchBar
+          handleSearch={this.handleSearch}
+          channelList={this.state.channelList}
+        />
           <Container
             maxWidth="xl"
             style={{
@@ -97,8 +106,12 @@ export default class VideoContainer extends React.Component {
               padding: '1vh'
             }}
           >
-            <VideoPlayer ActiveVideoId={this.state.ActiveVideoId}/>
-            <VideoResults videoResults={this.state.videoResults} setActiveVideo={this.setActiveVideo}/>
+            {this.renderVideoPlayer()}
+            <VideoResults
+              videoResults={this.state.videoResults}
+              setActiveVideo={this.setActiveVideo}
+              hasSearched={this.state.hasSearched}
+            />
           </Container>
 
       </Container>
