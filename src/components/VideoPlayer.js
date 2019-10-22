@@ -5,7 +5,7 @@ import Container from '@material-ui/core/Container'
 
 const opts = {
   height: '500',
-    width: '850',
+    width: '1200',
     playerVars: { // https://developers.google.com/youtube/player_parameters
       autoplay: 1
     }
@@ -19,19 +19,13 @@ const opts = {
   }
 
   const renderVideoPlayer = () => {
-    if (props.ActiveVideoId) {
-      return (
-        <YouTube
-          videoId={props.ActiveVideoId}
-          opts={opts}
-          onReady={handleReady}
-        />
-      )
-    } else {
-      return (
-        <h3>Search above and then click a video to start the player!</h3>
-      )
-    }
+    return (
+      <YouTube
+        videoId={props.ActiveVideoId}
+        opts={opts}
+        onReady={handleReady}
+      />
+    )
   }
 
    return (
@@ -43,12 +37,9 @@ const opts = {
         justifyContent: 'center',
         //flexGrow: '3',
         flexBasis: '60%',
-
-        // border: 'dashed #3f51b5 1px',
         borderRadius: '5px',
         margin: '1vh',
         padding: '.5vh',
-
         minHeight: '40vh',
       }}
     >
