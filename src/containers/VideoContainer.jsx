@@ -51,7 +51,7 @@ export default class VideoContainer extends React.Component {
       channelId,
       hasSearched: true
     })
-    const url = endpoint+`key=${key}`+"&"+query.part+"&"+query.maxResults+"&"+query.type+`&channelId=${channelId}&q=${keywords}`
+    const url = endpoint+`key=${key}&`+query.part+"&"+query.maxResults+"&"+query.type+`&channelId=${channelId}&q=${keywords}`
 
     fetch(url)
     .then(r => r.json())
