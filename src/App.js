@@ -19,7 +19,8 @@ class App extends React.Component {
     formError: false,
     formErrorText: null,
 
-    activePage: null
+    activePage: null,
+    activePicture: ''
   }
 
   logIn = (username, password) => {
@@ -83,6 +84,7 @@ class App extends React.Component {
   }
 
   render() {
+    // console.log(this.state)
     return (
       <div className="App" style={{width: '100%', height: '100%'}}>
         <Nav

@@ -49,10 +49,21 @@ const navigationButtonContainer = {
   'alignItems': 'center'
 }
 
-const imgStyle ={
+const imgStyle = {
   'width': '100%',
   'height': '100%',
   'padding': '0'
+}
+
+const quoteStyle = {
+  'color': 'white',
+  'font': '50 10vmin/5vh Cookie, cursive',
+  'position': 'absolute',
+  'top': '30%',
+  'left': '50%',
+  'transform': 'translateX(-50%) translateY(-50%)',
+  'mix-blend-mode': 'difference',
+  'minWidth': '100%',
 }
 
 const endpoint = "https://api.unsplash.com/search/photos?"
@@ -66,7 +77,10 @@ export default class InpirationsContainer extends React.Component {
     query: "query='sun%20nature'",
     pictureLinks: [],
     pictureIndex: 0,
-    picturePage: 1
+    picturePage: 1,
+    quoteList: [],
+    quoteIndex: 0,
+    quote: "Learn. Love. Code."
   }
 
   fetchPictures = () => {
@@ -99,6 +113,15 @@ export default class InpirationsContainer extends React.Component {
     }
   }
 
+  renderImgQuote = () => {
+    return (
+      <>
+        <img src={this.state.pictureLinks[this.state.pictureIndex]} alt='' style={imgStyle}></img>
+        <h1 style={quoteStyle}>{this.state.quote}</h1>
+      </>
+    )
+  }
+
   render() {
     // console.log("index: ", this.state.pictureIndex)
     // console.log("page: ", this.state.picturePage)
@@ -106,8 +129,7 @@ export default class InpirationsContainer extends React.Component {
       <Container maxWidth={false} id="inspiration page container" style={mainContainerStyle}>
 
         <Container maxWidth="false" style={pictureContainerStyle}>
-          {/*<img src={testpicture} style={imgStyle}></img>*/}
-          {<img src={this.state.pictureLinks[this.state.pictureIndex]} alt='' style={imgStyle}></img>}
+            {this.renderImgQuote()}
         </Container>
 
         <Container maxWidth="false" style={inspirationButtonContainer}>
@@ -158,3 +180,7 @@ export default class InpirationsContainer extends React.Component {
   }
 
 }
+
+// style={{position: 'relative'}}
+
+// style={{opacity: '0', position: 'absolute', top: '50%', left: '50%', transform: "translateX(-50%) translateY(-50%)" }}
