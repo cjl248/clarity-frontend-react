@@ -70,7 +70,7 @@ class App extends React.Component {
     } else if (this.state.activePage === 'Videos') {
       return(<VideoContainer currentUser={this.state.currentUser} />)
     } else if (this.state.activePage === 'Inspirations') {
-      return (<InspirationsContainer currentUser={this.state.currentUser} />)
+      return (<InspirationsContainer style={{width: '100%', height: '100%'}} currentUser={this.state.currentUser} setActivePage={this.setActivePage} />)
     }
   }
 
@@ -83,10 +83,13 @@ class App extends React.Component {
   }
 
   render() {
-    // console.log(this.state.activePage)
     return (
-      <div className="App">
-        <Nav loggedIn={this.state.loggedIn} setActivePage={this.setActivePage} logOut={this.logOut}/>
+      <div className="App" style={{width: '100%', height: '100%'}}>
+        <Nav
+          loggedIn={this.state.loggedIn}
+          setActivePage={this.setActivePage}
+          logOut={this.logOut}
+        />
         {
           this.state.loggedIn
           ?

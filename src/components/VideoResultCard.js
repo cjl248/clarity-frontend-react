@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -37,11 +37,11 @@ const useStyles = makeStyles(theme => ({
 export default function VideoResultCard(props) {
 
   const classes = useStyles()
-  const theme = useTheme()
+  // const theme = useTheme()
   const {id, title, thumbnail, date} = props.video
 
   const formatTitle = () => {
-    const rawTitle = props.video.title
+    const rawTitle = title
     return rawTitle.replace("&amp;", "and")
   }
 
