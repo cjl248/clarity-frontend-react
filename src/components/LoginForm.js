@@ -6,6 +6,8 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
+import LockOpenIcon from '@material-ui/icons/LockOpen';
+import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles(theme => ({
   container: {
@@ -40,7 +42,14 @@ export default function LoginForm(props) {
 
   return (
     <Container maxWidth="sm" className={classes.container}>
-    <h1>Login</h1>
+      <div style={{display: 'flex', flexDirection: 'row', justifyContent:
+      'center', alignItems: 'center', marginTop: '1rem'}}>
+        <LockOpenIcon style={{width: '40px', height: '40px'}} />
+        <Typography
+          variant="h4">
+          Login
+        </Typography>
+      </div>
     {
     props.formError
     ?
