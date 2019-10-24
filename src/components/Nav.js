@@ -34,10 +34,6 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-  },
-  hover: {
-    // textShadow: '0px 0px 5px white',
-    // color: '#132584'
   }
 }));
 

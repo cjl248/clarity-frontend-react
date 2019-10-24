@@ -84,7 +84,7 @@ export default class JournalContainer extends React.Component {
     // console.log(this.props)
     return (
       <>
-        <h1>{`${this.props.currentUser.first_name}'s Journal`}</h1>
+        <h1>{`Your Journal`}</h1>
         <Container maxWidth="md">
           {this.renderJournalEntries()}
           <JournalForm

@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
   container: {
     display: 'flex',
     flexWrap: 'wrap',
+    justifyContent: 'center',
+    background: 'white',
+    color: '#3F51B5'
   },
   textField: {
     marginLeft: theme.spacing(1),
@@ -60,7 +63,7 @@ export default function JournalForm(props) {
     <Typography
       component="div"
       variant="h5"
-      style={{ backgroundColor: '#3f51b5', color: 'white', height: '5vh', marginTop: '3vh', borderRadius: '5px' }}>
+      style={{ paddingTop: '0.5rem', backgroundColor: '#3f51b5', color: 'white', height: '2.5rem', marginTop: '2rem', borderRadius: '5px' }}>
       {"New Entry"}
     </Typography>
     {renderEntryErrors()}
@@ -102,10 +105,10 @@ export default function JournalForm(props) {
         variant="outlined"
       />
       <Button
-        size="medium"
+        style={{}}
+        size="large"
         color="primary"
         variant="contained"
-        fullWidth
         onClick={() => {props.createJournalEntry(values.title, values.date, values.content)}}>
         Submit
       </Button>

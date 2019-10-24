@@ -9,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 const useStyles = makeStyles({
   card: {
     minWidth: 275,
+    margin: '1rem 0',
   },
   bullet: {
     display: 'inline-block',
@@ -46,12 +47,16 @@ export default function JournalCard(props) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small" color="primary">
+        <Button
+          size="small"
+          color="primary"
+          variant="contained">
           Edit
         </Button>
         <Button
           size="small"
           color="primary"
+          variant="contained"
           onClick={ () => {props.deleteJournalEntry(props.entry.id)} }>
           Delete
         </Button>
