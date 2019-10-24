@@ -1,7 +1,5 @@
 import React from 'react';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import Typography from '@material-ui/core/Typography';
-// import { makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
@@ -37,6 +35,15 @@ import Button from '@material-ui/core/Button';
       label: '60 min',
     },
   ];
+
+  const containerStyle = {
+    height: '93vh',
+
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  }
 
   class MeditationContainer extends React.Component {
 
@@ -79,16 +86,14 @@ import Button from '@material-ui/core/Button';
 
 render() {
     return (
-      <React.Fragment>
-        <CssBaseline />
-
-        <Typography component="div" variant="h6" style={{ backgroundColor: '#cfe8fc', height: '5vh' }}>
-        {`Welcome back, ${this.props.currentUser.first_name}`}
-        </Typography>
-
-
-        <Container maxWidth="sm">
-          <Typography id="discrete-slider-always" gutterBottom>{"How long would you like to meditate for?"}</Typography>
+        <Container maxWidth="lg" style={containerStyle}>
+          <Typography
+            id="discrete-slider-always"
+            component="span"
+            variant="h4"
+            gutterBottom>
+            How long would you like your session to be?
+          </Typography>
           <Slider
             max={60}
             defaultValue={this.state.minutes}
@@ -96,21 +101,20 @@ render() {
             aria-labelledby="discrete-slider-always"
             step={5}
             marks={marks}
-            valueLabelDisplay="auto"
+            valueLabelDisplay="on"
             onChangeCommitted={this.handleChange}
           />
-        <Typography variant="h6" style={{flexGrow: 1}}>{`${this.state.minutes} minutes`}</Typography>
-
+        <Typography
+          variant="h2">
+          {`${this.state.minutes} minutes`}
+        </Typography>
         <Button
           variant="contained"
           color="primary"
-          style={ {margin: '10vh'} }
           onClick={ this.logSession }>
           Log Session
         </Button>
       </Container>
-
-      </React.Fragment>
     )
   }
 

@@ -65,7 +65,7 @@ class App extends React.Component {
 
   renderActivePage = () => {
     if (this.state.activePage === 'Meditate') {
-      return (<MeditationContainer currentUser={this.state.currentUser} />)
+      return (<MeditationContainer style={{width: '100%', height: '100%'}} currentUser={this.state.currentUser} />)
     } else if (this.state.activePage === 'Journal') {
       return (<JournalContainer currentUser={this.state.currentUser} />)
     } else if (this.state.activePage === 'Videos') {
