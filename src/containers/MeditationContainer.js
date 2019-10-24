@@ -4,6 +4,7 @@ import Slider from '@material-ui/core/Slider';
 import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 
+import Countdown from 'react-countdown-now';
 
   const marks = [
     {
@@ -45,7 +46,7 @@ import Button from '@material-ui/core/Button';
     alignItems: 'center',
   }
 
-  class MeditationContainer extends React.Component {
+class MeditationContainer extends React.Component {
 
   state = {
     minutes: 0
@@ -84,7 +85,15 @@ import Button from '@material-ui/core/Button';
     .then(console.log)
   }
 
-render() {
+  renderTimer = (time) => {
+    const newTime = time*60000
+    return (<Countdown
+      date={Date.now() + newTime}
+      renderer={props => <span><h1>{`Minutes: ${props.minutes}`}</h1><h1>{`Seconds: ${props.seconds}`}</h1></span> }>
+    </Countdown>)
+  }
+
+  render() {
     return (
         <Container maxWidth="lg" style={containerStyle}>
           <Typography
@@ -108,6 +117,7 @@ render() {
           variant="h2">
           {`${this.state.minutes} minutes`}
         </Typography>
+        {this.renderTimer(this.state.minutes)}
         <Button
           variant="contained"
           color="primary"
