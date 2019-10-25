@@ -161,7 +161,7 @@ export default class InpirationsContainer extends React.Component {
             variant="contained"
             size="large"
             color="primary">
-            Meditatate
+            Meditate
           </Button>
           <Button
             onClick={() => {this.props.setActivePage("Videos")} }
