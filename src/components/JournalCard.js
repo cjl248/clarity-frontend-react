@@ -40,7 +40,7 @@ export default function JournalCard(props) {
           {`Date: ${props.entry.date}`}
         </Typography>
         <Typography className={classes.pos} color="textSecondary">
-          {`Content`}
+          {`Entry`}
         </Typography>
         <Typography variant="body2" component="p">
           {`${props.entry.content}`}

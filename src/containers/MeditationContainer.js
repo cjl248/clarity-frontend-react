@@ -49,7 +49,8 @@ import Countdown from 'react-countdown-now';
 class MeditationContainer extends React.Component {
 
   state = {
-    minutes: 0
+    minutes: 0,
+    timerStarted: false
   }
 
   handleChange = (e, newValue) => {
@@ -82,48 +83,76 @@ class MeditationContainer extends React.Component {
 
     fetch("http://localhost:3000/meditation_sessions", config)
     .then(r => r.json())
-    .then(console.log)
+    .then(() => {
+      this.setState({
+        timerStarted: false
+      })
+    })
   }
 
   renderTimer = (time) => {
-    const newTime = time*60000
-    return (<Countdown
-      date={Date.now() + newTime}
-      renderer={props => <span><h1>{`Minutes: ${props.minutes}`}</h1><h1>{`Seconds: ${props.seconds}`}</h1></span> }>
-    </Countdown>)
+    if (this.state.timerStarted) {
+      const newTime = time*60000
+      return (
+        <Countdown
+          date={Date.now() + newTime}
+          renderer={
+            props => <Typography variant="h2">{`Minutes: ${props.minutes} | Seconds: ${props.seconds}`}</Typography>
+          }
+          onComplete={ this.logSession }>
+        </Countdown>
+      )
+    } else {
+      return (
+        <Typography variant="h2">{`Minutes: 00 | Seconds: 00`}</Typography>
+      )
+    }
+  }
+
+  renderButtons = () => {
+    if (this.state.timerStarted) {
+      return (
+          <Button
+          variant="contained"
+          color="primary"
+          onClick={ () => {this.setState({timerStarted: false})} }>
+          End
+        </Button>
+      )
+    } else {
+      return (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={ () => {this.setState({timerStarted: true})} }>
+          Start
+        </Button>
+      )
+    }
   }
 
   render() {
     return (
-        <Container maxWidth="lg" style={containerStyle}>
-          <Typography
-            id="discrete-slider-always"
-            component="span"
-            variant="h4"
-            gutterBottom>
-            How long would you like your session to be?
-          </Typography>
-          <Slider
-            max={60}
-            defaultValue={this.state.minutes}
-            getAriaValueText={this.valueText}
-            aria-labelledby="discrete-slider-always"
-            step={5}
-            marks={marks}
-            valueLabelDisplay="on"
-            onChangeCommitted={this.handleChange}
-          />
+      <Container maxWidth="lg" style={containerStyle}>
         <Typography
-          variant="h2">
-          {`${this.state.minutes} minutes`}
+          id="discrete-slider-always"
+          component="span"
+          variant="h4"
+          gutterBottom>
+          How long would you like your session to be?
         </Typography>
+        <Slider
+          max={60}
+          defaultValue={this.state.minutes}
+          getAriaValueText={this.valueText}
+          aria-labelledby="discrete-slider-always"
+          step={5}
+          marks={marks}
+          valueLabelDisplay="on"
+          onChangeCommitted={this.handleChange}
+        />
         {this.renderTimer(this.state.minutes)}
-        <Button
-          variant="contained"
-          color="primary"
-          onClick={ this.logSession }>
-          Log Session
-        </Button>
+        {this.renderButtons()}
       </Container>
     )
   }
@@ -131,3 +160,5 @@ class MeditationContainer extends React.Component {
 }
 
 export default MeditationContainer
+
+// <h1>{`${props.minutes}: ${props.seconds}`}</h1>
