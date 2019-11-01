@@ -46,7 +46,7 @@ import Countdown from 'react-countdown-now';
     alignItems: 'center',
   }
 
-class MeditationContainer extends React.Component {
+export default class MeditationContainer extends React.Component {
 
   state = {
     minutes: 0,
@@ -158,7 +158,3 @@ class MeditationContainer extends React.Component {
   }
 
 }
-
-export default MeditationContainer
-
-// <h1>{`${props.minutes}: ${props.seconds}`}</h1>
