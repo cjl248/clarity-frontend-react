@@ -25,12 +25,15 @@ import BlurOnRoundedIcon from '@material-ui/icons/BlurOnRounded';
 const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
+    paddingRight: theme.spacing(0),
+    marginRight: theme.spacing(0),
   },
   leftMenuButtons: {
     marginRight: theme.spacing(2),
   },
   rightMenuButtons: {
-    marginLeft: theme.spacing(140),
+    marginLeft: theme.spacing(152),
+    paddingRight: theme.spacing(0)
   },
   title: {
     flexGrow: 1,
@@ -41,6 +44,15 @@ export default function Nav(props) {
 
   const classes = useStyles()
   const [active, setActive] = useState(false)
+
+  const renderMenu = () => {
+    if (active) {
+      return (
+        <Drawer anchor="left" open={active} onClose={handleClick}>
+          {renderList()}
+        </Drawer>)
+    }
+  }
 
   const renderIcon = (name) => {
     if (name === 'Journal') return (<BorderColorRoundedIcon />)
@@ -136,16 +148,7 @@ export default function Nav(props) {
           }
         </Toolbar>
       </AppBar>
-      {
-      active
-      ?
-      <Drawer anchor="left" open={active} onClose={handleClick}>
-        {renderList()}
-      </Drawer>
-      :
-      ''
-      }
-
+      {renderMenu()}
     </div>
-  );
+  )
 }
