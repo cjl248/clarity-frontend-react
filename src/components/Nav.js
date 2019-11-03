@@ -91,64 +91,71 @@ export default function Nav(props) {
     e.target.classList.remove(classes.hover)
   }
 
+  const renderNavBar = () => {
+    if (props.loggedIn) {
+      return (
+        <>
+        <Typography
+          onMouseEnter={handleLogoMouseEnter}
+          onMouseLeave={handleLogoMouseLeave}
+          onClick={()=>{props.setActivePage('Inspirations')}}
+          variant="h4"
+          className={classes.leftMenuButtons}>
+          Clarity
+        </Typography>
+        <IconButton
+          edge="start"
+          className={classes.leftMenuButtons}
+          color="inherit"
+          aria-label="menu"
+          onClick={handleClick}>
+          <MenuIcon />
+        </IconButton>
+
+        <span className={classes.rightMenuButtons}>
+        <IconButton
+          edge="start"
+          className={classes.leftMenuButtons}
+          color="inherit"
+          aria-label="home"
+          onClick={()=>{props.setActivePage('Inspirations')}}>
+          <HomeRoundedIcon />
+          Home
+          </IconButton>
+          <IconButton
+            edge="start"
+            className={classes.leftMenuButtons}
+            color="inherit"
+            aria-label="logOut"
+            onClick={props.logOut}>
+            <ExitToAppRoundedIcon />
+            Logout
+          </IconButton>
+          </span>
+        </>
+      )
+    } else {
+      return (
+        <Typography
+          onMouseEnter={handleLogoMouseEnter}
+          onMouseLeave={handleLogoMouseLeave}
+          variant="h4"
+          className={classes.leftMenuButtons}>
+          Clarity
+        </Typography>
+      )
+    }
+  }
+
   return (
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          {
-          props.loggedIn
-          ?
-          <>
-          <Typography
-            onMouseEnter={handleLogoMouseEnter}
-            onMouseLeave={handleLogoMouseLeave}
-            onClick={()=>{props.setActivePage('Inspirations')}}
-            variant="h4"
-            className={classes.leftMenuButtons}>
-            Clarity
-          </Typography>
-          <IconButton
-            edge="start"
-            className={classes.leftMenuButtons}
-            color="inherit"
-            aria-label="menu"
-            onClick={handleClick}>
-            <MenuIcon />
-          </IconButton>
-
-          <span className={classes.rightMenuButtons}>
-          <IconButton
-            edge="start"
-            className={classes.leftMenuButtons}
-            color="inherit"
-            aria-label="home"
-            onClick={()=>{props.setActivePage('Inspirations')}}>
-            <HomeRoundedIcon />
-            Home
-            </IconButton>
-            <IconButton
-              edge="start"
-              className={classes.leftMenuButtons}
-              color="inherit"
-              aria-label="logOut"
-              onClick={props.logOut}>
-              <ExitToAppRoundedIcon />
-              Logout
-            </IconButton>
-            </span>
-          </>
-          :
-          <Typography
-            onMouseEnter={handleLogoMouseEnter}
-            onMouseLeave={handleLogoMouseLeave}
-            variant="h4"
-            className={classes.leftMenuButtons}>
-            Clarity
-          </Typography>
-          }
+          {renderNavBar()}
         </Toolbar>
       </AppBar>
       {renderMenu()}
     </div>
   )
+
 }
