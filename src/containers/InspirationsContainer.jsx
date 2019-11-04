@@ -62,7 +62,7 @@ const quoteStyle = {
   'top': '30%',
   'left': '50%',
   'transform': 'translateX(-50%) translateY(-50%)',
-  'mix-blend-mode': 'difference',
+  'mixBlendMode': 'difference',
   'minWidth': '100%',
 }
 
@@ -128,11 +128,11 @@ export default class InpirationsContainer extends React.Component {
     return (
       <Container maxWidth={false} id="inspiration page container" style={mainContainerStyle}>
 
-        <Container maxWidth="false" style={pictureContainerStyle}>
+        <Container maxWidth={false} style={pictureContainerStyle}>
             {this.renderImgQuote()}
         </Container>
 
-        <Container maxWidth="false" style={inspirationButtonContainer}>
+        <Container maxWidth={false} style={inspirationButtonContainer}>
           <Button
             variant="contained"
             size="large"
@@ -148,7 +148,7 @@ export default class InpirationsContainer extends React.Component {
           </Button>
         </Container>
 
-        <Container maxWidth="false" style={navigationButtonContainer}>
+        <Container maxWidth={false} style={navigationButtonContainer}>
           <Button
             onClick={() => {this.props.setActivePage("Journal")} }
             variant="contained"

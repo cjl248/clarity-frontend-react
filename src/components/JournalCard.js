@@ -5,6 +5,8 @@ import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+
 
 const useStyles = makeStyles({
   card: {
@@ -25,10 +27,67 @@ const useStyles = makeStyles({
 });
 
 export default function JournalCard(props) {
-  const classes = useStyles();
-  // const bull = <span className={classes.bullet}>•</span>;
 
-  // console.log(props.entry)
+  const classes = useStyles()
+
+  const [values, setValues] = React.useState({
+    title: '',
+    date: '',
+    content: '',
+  })
+
+  const handleChange = name => event => {
+    setValues({ ...values, [name]: event.target.value });
+  }
+
+  const [editing, setEditing] = React.useState(false)
+
+  const handleDelete = (id) => {
+    props.deleteJournalEntry(id)
+  }
+
+  const handleSubmit = (id, title) => {
+    setEditing(!editing)
+    props.editJournalEntry(id, title)
+  }
+
+  const toggleEditing = () => {
+    setEditing(!editing)
+  }
+
+  const renderEditForm = () => {
+    if (editing) {
+      return (
+        <form
+          className={classes.container}
+          noValidate
+          autoComplete="off"
+        >
+          <TextField
+            id="outlined-title"
+            label="Title"
+            fullWidth
+            className={classes.textField}
+            value={values.title}
+            onChange={handleChange('title')}
+            margin="normal"
+            variant="outlined"
+          />
+          <Button
+            style={{}}
+            size="large"
+            color="primary"
+            variant="contained"
+            onClick={ () => { handleSubmit(props.entry.id, values.title) } }
+          >
+            Submit
+          </Button>
+        </form>
+      )
+    } else return
+  }
+
+  // console.log(values.title)
 
   return (
     <Card className={classes.card}>
@@ -50,17 +109,21 @@ export default function JournalCard(props) {
         <Button
           size="small"
           color="primary"
-          variant="contained">
+          variant="contained"
+          onClick={toggleEditing}>
           Edit
         </Button>
         <Button
           size="small"
           color="primary"
           variant="contained"
-          onClick={ () => {props.deleteJournalEntry(props.entry.id)} }>
+          onClick={ () => { handleDelete(props.entry.id) } }>
           Delete
         </Button>
       </CardActions>
+      {renderEditForm()}
     </Card>
-  );
+  )
 }
+
+// onClick={ () => { handleSubmit(props.entry.id) } }

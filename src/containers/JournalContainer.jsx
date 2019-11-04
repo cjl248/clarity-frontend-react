@@ -9,7 +9,10 @@ export default class JournalContainer extends React.Component {
   state = {
     entries: this.props.currentUser.journal_entries,
     entryError: false,
-    entryErrorMessages: null
+    entryErrorMessages: null,
+
+    editError: false,
+    editErrorMessages: null
   }
 
   createJournalEntry = (title, date, content) => {
@@ -50,11 +53,30 @@ export default class JournalContainer extends React.Component {
           <JournalCard
             key={entry.id}
             entry={entry}
+            editJournalEntry={this.editJournalEntry}
             deleteJournalEntry={this.deleteJournalEntry}
           />
         )
       })
     }
+  }
+
+  // need editing parameters
+  editJournalEntry = (id, title) => {
+    const config = {
+      method: "PUT",
+      headers: {
+        "Content-Accept": "application/json",
+        "Accept": "application/json"
+      },
+      body: JSON.stringify({
+        title
+      })
+    }
+    console.log("config: ", config);
+    fetch(`http://localhost:3000/journal_entries/${id}`, config)
+    .then(r => r.json())
+    .then(console.log)
   }
 
   deleteJournalEntry = (id) => {
@@ -81,7 +103,6 @@ export default class JournalContainer extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
     return (
       <>
         <h1>{`Your Journal`}</h1>
