@@ -91,6 +91,7 @@ class App extends React.Component {
           loggedIn={this.state.loggedIn}
           setActivePage={this.setActivePage}
           logOut={this.logOut}
+          id="nav"
         />
         {
           this.state.loggedIn

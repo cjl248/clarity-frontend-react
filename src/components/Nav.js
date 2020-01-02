@@ -1,5 +1,6 @@
 // import React from 'react';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
+
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -14,6 +15,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import ExitToAppRoundedIcon from '@material-ui/icons/ExitToAppRounded';
 
+// Dark Mode
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControl from '@material-ui/core/FormControl';
+
+// Icons
 import BorderColorRoundedIcon from '@material-ui/icons/BorderColorRounded';
 import OndemandVideoRoundedIcon from '@material-ui/icons/OndemandVideoRounded';
 import WbSunnyRoundedIcon from '@material-ui/icons/WbSunnyRounded';
@@ -41,6 +48,17 @@ export default function Nav(props) {
 
   const classes = useStyles()
   const [active, setActive] = useState(false)
+  const [darkMode, setDarkMode] = useState(false)
+
+  useEffect(()=> {
+    const className = 'dark-mode'
+    const body = window.document.body
+    const app = window.document.getElementsByClassName("App")
+    const nav = app.getElementById("nav")
+
+    if (darkMode) { nav.classList.add(className) }
+    else { nav.classList.remove(className) }
+  })
 
   const renderMenu = () => {
     if (active) {
@@ -67,8 +85,27 @@ export default function Nav(props) {
             <ListItemText primary={text} />
           </ListItem>
         ))}
+        {renderDarkModeSwitch()}
       </List>
     )
+  }
+
+  const renderDarkModeSwitch = () => {
+    return (
+      <FormControl component="fieldset">
+        <FormControlLabel
+          value="dark-mode"
+          control={<Switch color="primary" value = {darkMode} onChange={handleDarkModeToggle} />}
+          label="Dark Mode"
+          labelPlacement="start"
+        />
+      </FormControl>
+    )
+  }
+
+  const handleDarkModeToggle = () => {
+    setDarkMode(!darkMode)
+    console.log(darkMode)
   }
 
   const handleMenuItemClick = (text) => {

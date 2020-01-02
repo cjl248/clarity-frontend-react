@@ -5,6 +5,16 @@
 
 }
 
+.App.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+.App.dark-mode {
+  background-color: #1a1919;
+  color: #999;
+}
+
 .App-logo {
   height: 40vmin;
 }
@@ -22,4 +32,14 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.nav.light-mode {
+  background-color: #fff;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+.nav.dark-mode {
+  background-color: #1a1919;
+  color: #999;
 }
