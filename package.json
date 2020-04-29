@@ -11,6 +11,7 @@
     "react-dom": "^16.10.2",
     "react-scripts": "3.2.0",
     "react-youtube": "^7.9.0",
+    "serialize-javascript": "^3.0.0",
     "typeface-roboto": "0.0.75"
   },
   "scripts": {
