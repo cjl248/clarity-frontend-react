@@ -1,4 +1,4 @@
-<h1 align="center">Clarity - Backend (Rails)</h1>
+<h1 align="center">Clarity - Frontend (React)</h1>
 
 <div align="center">
   A mindfulness hub for users to find inspiration, journal, and search for guided meditation videos. This guide walks through the packages needed for the React based front end.
