@@ -53,6 +53,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
   <i>For information on backend installation please click here: <a href="https://github.com/cjl248/clarity-backend-rails-api">Clarity Backend</a></i>
 </p>
 
+**Frontend Instalation**
 - Clone this repo to your local machine git clone `<this-repo-url>`
 - Ensure your backend is running localy at `http://localhost:3000/`
 - `cd` to frontend directory
