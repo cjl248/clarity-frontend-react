@@ -35,9 +35,13 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Custom CSS
 
 **API Keys**
-- YouTube API
-- Unsplash API
-- HealThruWords API
+<h3>This web app uses API keys from: </h3>
+- <a href="https://developers.google.com/youtube/v3">YouTube API</a>
+- <a href="https://unsplash.com/developers">Unsplash API</a>
+- <a href="https://rapidapi.com/HealThruWords/api/universal-inspirational-quotes/details">HealThruWords API</a>
 
 ## Installing
 - Clone this repo to your local machine git clone `<this-repo-url>`
+
+## Video
+- (to include video examples of app functionality)
