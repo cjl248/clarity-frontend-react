@@ -19,15 +19,17 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Widget for recording and tracking timed meditation sessions of different lengths.
 
 ## Tech Stack
-This web app makes use of the following:
+<h3>This web app makes use of the following: </h3>
 
 **Backend**
-- Ruby 
-- Rails API
-- Serailizer
-- PostgreSQL
-- bcrypt
-- jwt
+<ul>
+<li>Ruby</li>
+<li>Rails API</li>
+<li>Serailizer</li>
+<li>PostgreSQL</li>
+<li>bcrypt</li>
+<li>jwt</li>
+</ul>
 
 **Frontend** 
 - React
