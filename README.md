@@ -17,3 +17,27 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Allows users to chose a personally inspiring picture/quote combination on their landing that persists through pageUnsplash API and an inspiration quote API.
 - CRUD-eneabled journaling that updates optimistically and persists through the backend.
 - Widget for recording and tracking timed meditation sessions of different lengths.
+
+## Tech Stack
+This web app makes use of the following:
+
+**Backend**
+- Ruby 
+- Rails API
+- Serailizer
+- PostgreSQL
+- bcrypt
+- jwt
+
+**Frontend** 
+- React
+- Material-UI
+- Custom CSS
+
+**API Keys**
+- YouTube API
+- Unsplash API
+- HealThruWords API
+
+## Installing
+- Clone this repo to your local machine git clone `<this-repo-url>`
