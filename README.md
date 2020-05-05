@@ -40,12 +40,25 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - <a href="https://unsplash.com/developers">Unsplash API</a> <br>
 - <a href="https://rapidapi.com/HealThruWords/api/universal-inspirational-quotes/details">HealThruWords API</a>
 
+## Prerequisites
+<h3>Before you begin, please make sure you have installed the latest versions of: </h3>
+- Ruby
+- Rails
+- PostgreSQL
+- Node
+- NPM
+
 ## Installing
 <p>
   <i>For information on backend installation please click here: <a href="https://github.com/cjl248/clarity-backend-rails-api">Clarity Backend</a></i>
 </p>
 
 - Clone this repo to your local machine git clone `<this-repo-url>`
+- Ensure your backend is running localy at `http://localhost:3000/`
+- `cd` to frontend directory
+- run `npm install` to install all dependencies
+- run `npm start` to to start the server
+- hit `y` when prompted to run at `http://localhost:3001`
 
 ## Video
 - (to include video examples of app functionality)
