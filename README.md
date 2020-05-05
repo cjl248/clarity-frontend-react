@@ -22,18 +22,16 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 <h3>This web app makes use of the following: </h3>
 
 **Backend**
-<ul>
-<li>Ruby</li>
-<li>Rails API</li>
-<li>Serailizer</li>
-<li>PostgreSQL</li>
-<li>bcrypt</li>
-<li>jwt</li>
-</ul>
+- Ruby \[2.6.1\]
+- Rails API \[~> 5.2.4.2\]
+- Custom Serailizer
+- PostgreSQL \[>= 0.18, < 2.0\]
+- bcrypt \[~> 3.1.7\]
+- jwt \[~> 2.2\]
 
 **Frontend** 
-- React
-- Material-UI
+- React \[^16.10.2\]
+- Material-UI \[^4.5.1\]
 - Custom CSS
 
 **API Keys**
