@@ -41,6 +41,10 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - <a href="https://rapidapi.com/HealThruWords/api/universal-inspirational-quotes/details">HealThruWords API</a>
 
 ## Installing
+<p>
+  <i>For information on backend installation please click here: <a href="https://github.com/cjl248/clarity-backend-rails-api">Clarity Backend</a></i>
+</p>
+
 - Clone this repo to your local machine git clone `<this-repo-url>`
 
 ## Video
