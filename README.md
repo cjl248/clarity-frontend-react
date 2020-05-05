@@ -10,7 +10,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
   </sub>
 </div>
 
-<br />
+<br>
 
 ## Features
 - Video search using the YouTube API that lets the use find guided meditations, mindfulness teachers, calming music and more.
@@ -36,8 +36,8 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 
 **API Keys**
 <h3>This web app uses API keys from: </h3>
-- <a href="https://developers.google.com/youtube/v3">YouTube API</a>
-- <a href="https://unsplash.com/developers">Unsplash API</a>
+- <a href="https://developers.google.com/youtube/v3">YouTube API</a> <br>
+- <a href="https://unsplash.com/developers">Unsplash API</a> <br>
 - <a href="https://rapidapi.com/HealThruWords/api/universal-inspirational-quotes/details">HealThruWords API</a>
 
 ## Installing
