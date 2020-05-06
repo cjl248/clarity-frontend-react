@@ -55,8 +55,6 @@ export default function Nav(props) {
     const body = window.document.body
     const app = window.document.getElementsByClassName("App")
     const nav = app.getElementById("nav")
-      
-
     if (darkMode) { nav.classList.add(className) }
     else { nav.classList.remove(className) }
   })
