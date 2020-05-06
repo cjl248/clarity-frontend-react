@@ -50,15 +50,6 @@ export default function Nav(props) {
   const [active, setActive] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
-  useEffect(()=> {
-    const className = 'dark-mode'
-    const body = window.document.body
-    const app = window.document.getElementsByClassName("App")
-    const nav = app.getElementById("nav")
-    if (darkMode) { nav.classList.add(className) }
-    else { nav.classList.remove(className) }
-  })
-
   const renderMenu = () => {
     if (active) {
       return (
@@ -102,9 +93,19 @@ export default function Nav(props) {
     )
   }
 
-  const handleDarkModeToggle = () => {
+  const handleDarkModeToggle = (e) => {
     setDarkMode(!darkMode)
-    console.log(darkMode)
+    const button = e.target
+
+    // add classlist to APP
+    const darkClass = null
+    if (darkMode) {
+      const darkClass = {background: "black" }
+      e.target.classList.add(classes.darkClass)
+    }
+    else {
+      e.target.classList.remove(classes.darkClass)
+    }
   }
 
   const handleMenuItemClick = (text) => {
