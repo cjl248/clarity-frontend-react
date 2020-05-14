@@ -62,4 +62,4 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Press `y` when prompted to run at `http://localhost:3001`
 
 ## Video
-- (to include video examples of app functionality)
+(to include video examples of app functionality)
