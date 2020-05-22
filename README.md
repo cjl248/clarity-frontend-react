@@ -46,7 +46,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - <a href="https://rubyonrails.org/">Rails</a> <br>
 - <a href="https://www.postgresql.org/">PostgreSQL</a> <br>
 - <a href="https://nodejs.org/en/">Node</a> <br>
-- NPM
+- <a href="https://www.npmjs.com/">NPM</a>
 
 ## Installation
 <p>
