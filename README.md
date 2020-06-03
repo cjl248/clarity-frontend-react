@@ -62,4 +62,5 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Press `y` when prompted to run at `http://localhost:3001`
 
 ## Video
-(to include video examples of app functionality)
+<b>Journaling</b>
+<iframe src="https://player.vimeo.com/video/425576015" width="640" height="311" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
