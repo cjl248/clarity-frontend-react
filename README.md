@@ -61,7 +61,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Run `npm start` to to start the server
 - Press `y` when prompted to run at `http://localhost:3001`
 
-## Video
+## Demos
 
 **Users can select an inspiring picture and quote combination for their landing page...**
 
