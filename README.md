@@ -62,7 +62,15 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - Press `y` when prompted to run at `http://localhost:3001`
 
 ## Video
-<b>Journaling</b>
+
+Users can select an inspiring picture and quote combination for their landing page.
+
 <img src="./public/GIFS/inspiration-demo.gif"
-     alt="showing Clarity's journaling functionality."
+     alt="Showing how users can cycle through different inspiring pictures."
      style="max-width: 100%" />
+
+Users can also add, edit and delete their journal entries, which persist in the database.
+
+<img src="./public/GIFS/journal-demo.gif"
+  alt="Showing Clarity's journaling functionality."
+  style="max-width: 100%" />
