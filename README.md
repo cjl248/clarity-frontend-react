@@ -63,25 +63,25 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 
 ## Video
 
-- Users can select an inspiring picture and quote combination for their landing page...
+**Users can select an inspiring picture and quote combination for their landing page...**
 
 <img src="./public/GIFS/inspiration-demo.gif"
      alt="Showing how users can cycle through different inspiring pictures."
      style="max-width: 100%" />
 
-- Users can also add, edit and delete their journal entries, which persist in the database...
+**Users can also add, edit and delete their journal entries, which persist in the database...**
 
 <img src="./public/GIFS/journal-demo.gif"
   alt="Showing Clarity's journaling functionality."
   style="max-width: 100%" />
 
-- As well as record timed meditation sessions...
+**As well as record timed meditation sessions...**
 
 <img src="./public/GIFS/meditation-demo.gif"
   alt="Showing a sample timed meditation."
   style="max-width: 100%" />
 
-- And search for mindfulness videos from a variety of channels by keyword.
+**And search for mindfulness videos from a variety of channels by keyword.**
 
 <img src="./public/GIFS/video-search-demo.gif"
   alt="Showing an example if video search."
