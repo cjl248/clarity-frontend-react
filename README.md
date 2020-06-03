@@ -5,7 +5,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 </div>
 
 <div align="center">
-  <sub>Built with ❤️ by 
+  <sub>Built with ❤️ by
   <a href="https://github.com/cjl248">Chris Liendo</a>
   </sub>
 </div>
@@ -29,7 +29,7 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 - bcrypt \[~> 3.1.7\]
 - jwt \[~> 2.2\]
 
-**Frontend** 
+**Frontend**
 - React \[^16.10.2\]
 - Material-UI \[^4.5.1\]
 - Custom CSS
@@ -63,4 +63,6 @@ A mindfulness hub for users to find inspiration, journal, and search for guided 
 
 ## Video
 <b>Journaling</b>
-<iframe src="https://player.vimeo.com/video/425576015" width="640" height="311" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<img src="./public/GIFS/inspiration-demo.gif"
+     alt="showing Clarity's journaling functionality."
+     style="max-width: 100%" />
