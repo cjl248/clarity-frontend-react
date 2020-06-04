@@ -15,11 +15,12 @@ class App extends React.Component {
   state = {
     loggedIn: false,
     currentUser: null,
+
     formError: false,
     formErrorText: null,
+
     activePage: null,
-    activePicture: '',
-    darkMode: false,
+    activePicture: ''
   }
 
   logIn = (username, password) => {
@@ -82,20 +83,14 @@ class App extends React.Component {
     localStorage.clear()
   }
 
-  toggleDarkMode = () => {
-    console.log("clicked")
-  }
-
   render() {
     // console.log(this.state)
     return (
       <div className="App" style={{width: '100%', height: '100%'}}>
         <Nav
           loggedIn={this.state.loggedIn}
-          logOut={this.logOut}
           setActivePage={this.setActivePage}
-          darkMode={this.state.darkMode}
-          toggleDarkMode={this.toggleDarkMode}
+          logOut={this.logOut}
           id="nav"
         />
         {
