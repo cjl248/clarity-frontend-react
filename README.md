@@ -1,68 +1,88 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h1 align="center">Clarity - Frontend (React)</h1>
 
-## Available Scripts
+<div align="center">
+A mindfulness hub for users to find inspiration, journal, and search for guided meditation videos. This guide walks through the steps needed to get the UI up and running.
+</div>
 
-In the project directory, you can run:
+<div align="center">
+  <sub>Built with ❤️ by
+  <a href="https://github.com/cjl248">Chris Liendo</a>
+  </sub>
+</div>
 
-### `npm start`
+<br>
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Features
+- Video search using the YouTube API that lets the use find guided meditations, mindfulness teachers, calming music and more
+- Allows users to chose a personally inspiring picture/quote combination on their landing that persists through pageUnsplash API and an inspiration quote API
+- CRUD-eneabled journaling that updates optimistically and persists through the backend
+- Widget for recording and tracking timed meditation sessions of different lengths
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Tech Stack
+<h3>This web app makes use of the following: </h3>
 
-### `npm test`
+**Backend**
+- Ruby \[2.6.1\]
+- Rails API \[~> 5.2.4.2\]
+- Custom Serailizer
+- PostgreSQL \[>= 0.18, < 2.0\]
+- bcrypt \[~> 3.1.7\]
+- jwt \[~> 2.2\]
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend**
+- React \[^16.10.2\]
+- Material-UI \[^4.5.1\]
+- Custom CSS
 
-### `npm run build`
+**API Keys**
+<h3>This web app uses API keys from: </h3>
+- <a href="https://developers.google.com/youtube/v3">YouTube API</a> <br>
+- <a href="https://unsplash.com/developers">Unsplash API</a> <br>
+- <a href="https://rapidapi.com/HealThruWords/api/universal-inspirational-quotes/details">HealThruWords API</a>
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisites
+<h3>Before you begin, please make sure you have installed the latest versions of: </h3>
+- <a href="https://www.ruby-lang.org/en/">Ruby</a> <br>
+- <a href="https://rubyonrails.org/">Rails</a> <br>
+- <a href="https://www.postgresql.org/">PostgreSQL</a> <br>
+- <a href="https://nodejs.org/en/">Node</a> <br>
+- <a href="https://www.npmjs.com/">NPM</a>
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+## Installation
+<p>
+  <i>For information on backend installation please click here: <a href="https://github.com/cjl248/clarity-backend-rails-api">Clarity Backend</a></i>
+</p>
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**Frontend Instalation**
+- Clone this repo to your local machine git clone `<this-repo-url>`
+- Ensure your backend is running localy at `http://localhost:3000/`
+- `cd` to frontend directory
+- Run `npm install` to install all dependencies
+- Run `npm start` to to start the server
+- Press `y` when prompted to run at `http://localhost:3001`
 
-### `npm run eject`
+## Demos
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Users can select an inspiring picture and quote combination for their landing page...**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<img src="./public/GIFS/inspiration-demo.gif"
+     alt="Showing how users can cycle through different inspiring pictures."
+     style="max-width: 100%" />
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**Users can also add, edit and delete their journal entries, which persist in the database...**
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+<img src="./public/GIFS/journal-demo.gif"
+  alt="Showing Clarity's journaling functionality."
+  style="max-width: 100%" />
 
-## Learn More
+**As well as record timed meditation sessions...**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<img src="./public/GIFS/meditation-demo.gif"
+  alt="Showing a sample timed meditation."
+  style="max-width: 100%" />
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**And search for mindfulness videos from a variety of channels by keyword.**
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<img src="./public/GIFS/video-search-demo.gif"
+  alt="Showing an example if video search."
+  style="max-width: 100%" />
