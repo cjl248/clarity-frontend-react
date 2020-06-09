@@ -85,7 +85,7 @@ export default function Nav(props) {
       <FormControl component="fieldset">
         <FormControlLabel
           value="dark-mode"
-          control={<Switch color="primary" value = {darkMode} onChange={handleDarkModeToggle} />}
+          control={<Switch color="primary" value = {props.darkMode} onChange={handleDarkModeToggle} />}
           label="Dark Mode"
           labelPlacement="start"
         />
@@ -95,16 +95,16 @@ export default function Nav(props) {
 
   const handleDarkModeToggle = (e) => {
     setDarkMode(!darkMode)
-    const button = e.target
+    const app = document.getElementsByClassName("App")[0]
+    console.dir(app);
 
     // add classlist to APP
-    const darkClass = null
+    const darkClass = {background: "#000000"}
     if (darkMode) {
-      const darkClass = {background: "black" }
-      e.target.classList.add(classes.darkClass)
+      app.style += darkClass
     }
     else {
-      e.target.classList.remove(classes.darkClass)
+      app.style -= darkClass
     }
   }
 

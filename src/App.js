@@ -94,6 +94,7 @@ class App extends React.Component {
           loggedIn={this.state.loggedIn}
           logOut={this.logOut}
           setActivePage={this.setActivePage}
+          darkMode={this.state.darkMode}
           toggleDarkMode={this.toggleDarkMode}
           id="nav"
         />
