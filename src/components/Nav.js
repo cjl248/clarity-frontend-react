@@ -50,15 +50,6 @@ export default function Nav(props) {
   const [active, setActive] = useState(false)
   const [darkMode, setDarkMode] = useState(false)
 
-  useEffect(()=> {
-    const className = 'dark-mode'
-    const body = window.document.body
-    const app = window.document.getElementsByClassName("App")
-    const nav = app.getElementById("nav")
-    if (darkMode) { nav.classList.add(className) }
-    else { nav.classList.remove(className) }
-  })
-
   const renderMenu = () => {
     if (active) {
       return (
@@ -94,7 +85,7 @@ export default function Nav(props) {
       <FormControl component="fieldset">
         <FormControlLabel
           value="dark-mode"
-          control={<Switch color="primary" value = {darkMode} onChange={handleDarkModeToggle} />}
+          control={<Switch color="primary" value = {props.darkMode} onChange={handleDarkModeToggle} />}
           label="Dark Mode"
           labelPlacement="start"
         />
@@ -102,9 +93,19 @@ export default function Nav(props) {
     )
   }
 
-  const handleDarkModeToggle = () => {
+  const handleDarkModeToggle = (e) => {
     setDarkMode(!darkMode)
-    console.log(darkMode)
+    const app = document.getElementsByClassName("App")[0]
+    console.dir(app);
+
+    // add classlist to APP
+    const darkClass = {background: "#000000"}
+    if (darkMode) {
+      app.style += darkClass
+    }
+    else {
+      app.style -= darkClass
+    }
   }
 
   const handleMenuItemClick = (text) => {
